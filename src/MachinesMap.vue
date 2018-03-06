@@ -5,7 +5,7 @@
 <script>
     export default {
         name: "machinesMap",
-        props : ['map']
+        // props : ['map']
     }
 </script>
 

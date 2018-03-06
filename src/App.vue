@@ -2,12 +2,14 @@
   <div id="app">
     <img src="./assets/coffee-house-cafe-logo.png"/>
     <h1>{{ msg }}</h1>
+    <!--définit les liens routes-->
     <router-link to="/machines">
       <button v-on:click="onMachinesListClick">{{msg2}}</button>
     </router-link>
     <router-link to="/map">
       <button v-on:click="onMapClick">{{msg3}}</button>
     </router-link>
+    <!--retourne la vue-->
     <router-view> </router-view>
     <!--affiche 'liste des machines' grace au composant créé dans machineslist.vue-->
     <!--<ListMachines> </ListMachines>-->
