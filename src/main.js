@@ -5,7 +5,7 @@ Vue.component('ListMachines', list); // nom que l'on définit (à appeler dans l
 import map from './MachinesMap.vue'
 Vue.component('MapMachines', map);
 import Machine from './Machine.vue'
-Vue.component('name', Machine);
+// Vue.component('name', Machine);
 import VueRouter from 'vue-router' //installer vue router : npm install vue-router
 Vue.use(VueRouter);
 

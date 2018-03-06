@@ -10,13 +10,8 @@
 
 <script>
   export default {
-    data() {
-      return {
-        name: 'What else ?',
-        status: false,
-        checkedAt: new Date().toLocaleString(), //pour changer le format de la date
-      }
-    }
+    name : "Machine",
+    props:['name','status','checkedAt'],
   }
 </script>
 
