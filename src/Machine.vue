@@ -16,10 +16,18 @@
 </script>
 
 <style scoped>
+  div{
+    border: 2px solid black;
+    margin: auto;
+    width: 65%;
+    margin-bottom: 15px;
+
+  }
 
   .vrai {
     color: lawngreen;
   }
+
 
   .faux {
     color: red;
