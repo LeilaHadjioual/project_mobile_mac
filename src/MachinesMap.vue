@@ -8,7 +8,7 @@
       <div>
         <gmap-marker :key="markers.id"
                      v-for="mark in markers"
-                     :position="{lat:mark.latitude, lng:mark.longitude}"
+                     :position="{lat:mark.latitude,lng:mark.longitude}"
                      :draggable="true">
 
         </gmap-marker>
