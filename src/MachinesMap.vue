@@ -2,12 +2,13 @@
   <div>
     <h1>Carte des machines</h1>
     <gmap-map class="map"
+
               :center="{lat:45.16667, lng: 5.71667}"
               :zoom="12">
       <div>
-        <gmap-marker :key="id"
+        <gmap-marker :key="markers.id"
                      v-for="mark in markers"
-                     :position="mark.position"
+                     :position="{lat:mark.latitude, lng:mark.longitude}"
                      :draggable="true">
 
         </gmap-marker>
@@ -24,11 +25,13 @@
       return {
         markers: [{
           id: 1,
-          position: {lat:45.165133, lng:  5.767761}
+          latitude: 45.165133,
+          longitude: 5.767761,
         },
           {
             id: 2,
-            position: {lat:45.142151, lng: 5.718034}
+            latitude: 45.142151,
+            longitude: 5.718034,
           }]
       }
     }
