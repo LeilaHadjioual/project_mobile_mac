@@ -1,10 +1,10 @@
 import Vue from 'vue'
 import App from './App.vue'
-import list from './MachinesList.vue'// nom de la props from fichier où est définit la props
-Vue.component('ListMachines', list); // nom que l'on définit (à appeler dans la balise) , nom de la props
-import map from './MachinesMap.vue'
+import machinesList from './MachinesList.vue'// nom du compocant from fichier où est définit le composanr
+Vue.component('ListMachines', machinesList); // nom que l'on définit (à appeler dans la balise) , nom du composant
+import machinesMap from './MachinesMap.vue'
 
-Vue.component('MapMachines', map);
+Vue.component('MapMachines', machinesMap);
 import Machine from './Machine.vue'
 import VueRouter from 'vue-router' //installer vue router : npm install vue-router
 Vue.use(VueRouter);
@@ -19,8 +19,8 @@ Vue.use(VueGoogleMaps, {
 
 //création des routes
 const routes = [
-  {path: '/machines', component: list},
-  {path: '/map', component: map},
+  {path: '/machines', component: machinesList},
+  {path: '/map', component: machinesMap},
   {path: '/machine', component: Machine},
 ];
 
@@ -32,5 +32,4 @@ new Vue({
   el: '#app',
   render: h => h(App),
   router,
-
 });

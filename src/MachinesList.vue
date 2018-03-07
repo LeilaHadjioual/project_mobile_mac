@@ -1,17 +1,21 @@
 <template>
   <div>
-    <h1>Liste des machines</h1>
-     <Machine v-for= "machine in machines" :key ="machine.id" v-bind:name="machine.name" :status="machine.status" :checkedAt="machine.checkedAt.toLocaleString()"> </Machine>
+    <h1> Liste des machines </h1>
+     <Machine v-for= "machine in machines"
+              :key ="machine.id"
+              v-bind:name="machine.name"
+              :status="machine.status"
+              :checkedAt="machine.checkedAt.toLocaleString()">
+     </Machine>
   </div>
-
 
 </template>
 
 <script>
-  import Machine from './Machine.vue'
+  import Machine from './Machine.vue' // import du composant pour pouvoir l'utiliser
 
   export default {
-    components: {Machine},
+    components: {Machine},//récup le composant machine
     name: "machinesList",
     data() {
       return {
