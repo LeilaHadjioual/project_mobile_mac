@@ -5,10 +5,10 @@
              :key="machine.id"
              v-bind:name="machine.name"
              :status="machine.status"
-             :checkedAt="machine.checkedAt.toLocaleString()">
+             :checkedAt="machine.checkedAt">
     </Machine>
-  </div>
 
+    </div>
 </template>
 
 <script>
