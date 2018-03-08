@@ -13,10 +13,11 @@ import VueRouter from 'vue-router' //installer vue router : npm install vue-rout
 Vue.use(VueRouter);
 
 import * as VueGoogleMaps from 'vue2-google-maps'//installer vue map : npm install vue2-google-maps
+require('./mapGoogle.js');
 
 Vue.use(VueGoogleMaps, {
   load: {
-    key: ' AIzaSyAFitITUROy2w4_WCjA92S0Axj-Hc2WCDA ',//clé API récupérée sur googlemap api
+    key: mykey,//clé API récupérée sur googlemap api
     libraries: 'places',
   }
 });
