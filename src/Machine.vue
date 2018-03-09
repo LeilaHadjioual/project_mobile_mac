@@ -16,7 +16,7 @@
 
 </script>
 
-<style scoped>
+<style  scoped>
   div {
     border: 2px solid black;
     margin: auto;
