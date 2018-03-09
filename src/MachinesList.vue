@@ -13,29 +13,29 @@
 
 <script>
   import Machine from './Machine.vue' // import du composant pour pouvoir l'utiliser
-  import axios from 'axios' //pour pouvoir utiliser la bibliothèque axios (get-post)
+  // import axios from 'axios' //pour pouvoir utiliser la bibliothèque axios (get-post)
 
   export default {
-    components: {Machine},//récup le composant machine
-
+    components: {Machine},//récup le composant machine pour pouvoir l'utiliser
+    props : ['machines', 'loading', 'error'],
     name: "machinesList",
-    data: function () {
-      return {
-        machines: [],// api machine fournie
-        //loading: true,
-        error: null,
-      }
-    },
-    created() {
-      axios.get('https://machine-api-campus.herokuapp.com/api/machines')
-        .then(response => {
-          //this.loading = true;
-          this.machines = response.data
-        })
-        .catch(error => {
-          this.errors.push(error)
-        })
-    }
+    // data: function () {
+    //   return {
+    //     machines: [],// api machine fournie
+    //     loading: true,
+    //     error: null,
+    //   }
+    // },
+    // created() {
+    //   axios.get('https://machine-api-campus.herokuapp.com/api/machines')
+    //     .then(response => {
+    //       this.loading = true;
+    //       this.machines = response.data
+    //     })
+    //     .catch(error => {
+    //       this.errors.push(error)
+    //     })
+    // }
   }
 </script>
 

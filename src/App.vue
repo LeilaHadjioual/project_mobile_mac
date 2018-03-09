@@ -10,7 +10,7 @@
       <button v-on:click="onMapClick"> {{msg3}} </button>
     </router-link>
     <!--retourne la vue-->
-    <router-view> </router-view>
+    <router-view v-bind:machines="machines" :loading="loading" :error="error"> </router-view>
     <!--affiche 'liste des machines' grace au composant créé dans machineslist.vue-->
     <!--<ListMachines> </ListMachines>-->
     <!--<MapMachines> </MapMachines>-->
@@ -18,13 +18,17 @@
 </template>
 
 <script>
+  import axios from 'axios'
   export default {
     name: 'app',
     data() {
       return {
         msg: 'Gestion machines à café',
         msg2: 'Consulter la liste des machines',
-        msg3: 'Voir la carte'
+        msg3: 'Voir la carte',
+        machines: [],// api machine fournie
+        loading: true,
+        error: null,
       }
     },
     methods: {
@@ -34,7 +38,17 @@
       onMapClick: function () {
         alert('Vous avez cliqué sur la carte des machines')
       }
-    }
+    },
+    created() {
+      axios.get('https://machine-api-campus.herokuapp.com/api/machines')
+        .then(response => {
+          this.machines = response.data;
+          this.loading = false;
+        })
+        .catch(error => {
+          this.error.push(error)
+        })
+     }
   }
 </script>
 

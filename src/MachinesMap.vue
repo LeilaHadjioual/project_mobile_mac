@@ -3,12 +3,13 @@
     <h1>Carte des machines</h1>
     <gmap-map class="map"
               :center="{lat:45.16667, lng: 5.71667}"
-              :zoom="12">
+              :zoom="2">
       <div>
         <gmap-marker :key="machine.id"
                      v-for="machine in machines"
                      :position="{lat:Number(machine.latitude),lng:Number(machine.longitude)}"
                      :draggable="true">
+        <!--:position="{lat : mark.latitude, mark.longitude"-->
 
         </gmap-marker>
       </div>
@@ -18,10 +19,11 @@
 </template>
 
 <script>
-  import axios from 'axios'
+  // import axios from 'axios'
 
   export default {
     name: "machinesMap",
+    props : ['machines', 'loading', 'error']
     // data() {
     //   return {
     //     markers: [{
@@ -36,22 +38,22 @@
     //       }]
     //   }
     // },
-    data: function () {
-      return {
-        machines: [],// api machine fournie
-        loading: true,
-        error: null,
-      }
-    },
-    created() {
-      axios.get('https://machine-api-campus.herokuapp.com/api/machines')
-        .then(response => {
-          this.machines = response.data;
-        })
-        .catch(error => {
-          this.errors.push(error)
-        })
-    }
+    // data: function () {
+    //   return {
+    //     machines: [],// api machine fournie
+    //     loading: true,
+    //     error: null,
+    //   }
+    // },
+    // created() {
+    //   axios.get('https://machine-api-campus.herokuapp.com/api/machines')
+    //     .then(response => {
+    //       this.machines = response.data;
+    //     })
+    //     .catch(error => {
+    //       this.errors.push(error)
+    //     })
+    // }
   }
 </script>
 

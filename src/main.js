@@ -7,7 +7,7 @@ import machinesMap from './MachinesMap.vue'
 Vue.component('MapMachines', machinesMap);
 
 import Machine from './Machine.vue'
-// Vue.component('test', Machine);
+// Vue.component('Machine', Machine);
 
 import VueRouter from 'vue-router' //installer vue router : npm install vue-router
 Vue.use(VueRouter);
