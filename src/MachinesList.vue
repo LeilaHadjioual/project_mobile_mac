@@ -8,7 +8,7 @@
              :checkedAt="machine.checkedAt">
     </Machine>
 
-    </div>
+  </div>
 </template>
 
 <script>
@@ -17,7 +17,7 @@
 
   export default {
     components: {Machine},//récup le composant machine pour pouvoir l'utiliser
-    props : ['machines', 'loading', 'error'],
+    props: ['machines', 'loading', 'error'],
     name: "machinesList",
     // data: function () {
     //   return {

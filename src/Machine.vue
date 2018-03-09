@@ -10,14 +10,14 @@
 
 <script>
   export default {
-    name : "Machine",
-    props:['name','status','checkedAt'],
+    name: "Machine",
+    props: ['name', 'status', 'checkedAt'],
   }
 
 </script>
 
 <style scoped>
-  div{
+  div {
     border: 2px solid black;
     margin: auto;
     width: 65%;

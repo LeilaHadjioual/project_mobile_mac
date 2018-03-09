@@ -4,10 +4,10 @@
     <h1> {{ msg }} </h1>
     <!--définit les liens routes-->
     <router-link to="/machines">
-      <button v-on:click="onMachinesListClick"> {{msg2}} </button>
+      <button v-on:click="onMachinesListClick"> {{msg2}}</button>
     </router-link>
     <router-link to="/map">
-      <button v-on:click="onMapClick"> {{msg3}} </button>
+      <button v-on:click="onMapClick"> {{msg3}}</button>
     </router-link>
     <!--retourne la vue-->
     <router-view v-bind:machines="machines" :loading="loading" :error="error"> </router-view>
@@ -19,6 +19,7 @@
 
 <script>
   import axios from 'axios'
+
   export default {
     name: 'app',
     data() {
@@ -48,7 +49,7 @@
         .catch(error => {
           this.error.push(error)
         })
-     }
+    }
   }
 </script>
 

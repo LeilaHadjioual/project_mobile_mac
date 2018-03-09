@@ -1,6 +1,13 @@
 <template>
   <div>
     <h1>Carte des machines</h1>
+    <!--affiche le nom de la machine si clic marqueurs-->
+    <Machine v-if="afficheMachine"
+             v-bind:name="afficheMachine.name"
+             :status="afficheMachine.status"
+             :checkedAt="afficheMachine.checkedAt">
+    </Machine>
+
     <gmap-map class="map"
               :center="{lat:45.16667, lng: 5.71667}"
               :zoom="2">
@@ -8,9 +15,9 @@
         <gmap-marker :key="machine.id"
                      v-for="machine in machines"
                      :position="{lat:Number(machine.latitude),lng:Number(machine.longitude)}"
-                     :draggable="true">
-        <!--:position="{lat : mark.latitude, mark.longitude"-->
-
+                     :draggable="true"
+                     @click="affichage(machine)">
+          <!--:position="{lat : mark.latitude, mark.longitude"-->
         </gmap-marker>
       </div>
     </gmap-map>
@@ -20,10 +27,23 @@
 
 <script>
   // import axios from 'axios'
+  import Machine from './Machine.vue'
 
   export default {
     name: "machinesMap",
-    props : ['machines', 'loading', 'error']
+    components: {Machine},//pour utiliser la balise Machine
+    props: ['machines', 'loading', 'error'],
+    data() {
+      return {
+        afficheMachine: '',
+      }
+    },
+    methods: {
+      affichage: function (uneMachine) {
+        this.afficheMachine = uneMachine; //récupérer les infos de la machine
+
+      }
+    }
     // data() {
     //   return {
     //     markers: [{
