@@ -15,6 +15,7 @@
     <!--<ListMachines> </ListMachines>-->
     <!--<MapMachines> </MapMachines>-->
   </div>
+
 </template>
 
 <script>
